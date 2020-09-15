@@ -1,0 +1,95 @@
+.wrapper {
+	width: 800px;
+	height: 400px;
+	margin: 50px auto;
+	background-color: #0d5e9d;
+	color: white;
+}
+.weather {
+	padding: 30px 60px 60px 60px;
+}
+.weather__title{
+	font-size: 15px;
+	line-height: 15px;
+}
+.weather__row {
+	display: flex;
+}
+.weather__column {
+	flex: 1 1 50%;
+}
+.weather__column:last-child {
+	text-align: center;
+}
+.date {
+	font-size: 35px;
+}
+.alarm-clock {
+	padding-left: 30px;
+	margin-top: 5px;
+	font-size: 21px;
+	position: relative;
+}
+.alarm-clock::before {
+	content: "";
+	background-image: url("alarm.png");
+	width: 26px;
+	height: 26px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.time {
+	margin-top: 5px;
+	font-size: 72px;
+}
+.time sup{
+	font-size: 36px;
+}
+.humidity {
+	margin-top: 5px;
+	font-size: 21px;
+}
+.pressure {
+	font-size: 21px;
+}
+.wind {
+	margin-top: 20px;
+	font-size: 21px;
+}
+.image {
+	width: 100px;
+	height: 100px;
+}
+.temperature {
+	font-size: 37px;
+}
+.feels-like {
+	font-size: 25px;
+}
+.clouds {
+	text-transform: capitalize;
+	font-size: 24px;
+	font-weight: bold;
+}
+.refresh-time {
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* .refresh-date {} */
+.refresh-icon {
+	cursor: pointer;
+	background-image: url("reload_refresh.png");
+	background-position: center;
+	background-size: 100% 100%;
+	width: 40px;
+	height: 40px;
+}
+.user__avatar{
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin: 0 auto;
+}
