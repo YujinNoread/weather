@@ -78,7 +78,7 @@ let time = document.querySelector(".time");
 date.textContent= month+" "+clock.getDate()+", "+clock.getFullYear()+" - "+week;
 time.textContent = zero_first_format(clock.getHours())+" : "+zero_first_format(clock.getMinutes());
 refreshDate.textContent= month+" "+zero_first_format(clock.getDate())+", "+zero_first_format(clock.getHours())+" : "+zero_first_format(clock.getMinutes())+" : "+zero_first_format(clock.getSeconds());
-fetch("http://api.openweathermap.org/data/2.5/weather?q=kremenchug&units=metric&APPID=5d066958a60d315387d9492393935c19")
+fetch("https://api.openweathermap.org/data/2.5/weather?q=kremenchug&units=metric&APPID=5d066958a60d315387d9492393935c19")
 .then(response => response.json())
 .then(data => {
 	let title = document.querySelector(".weather__title").textContent=data.name;
@@ -89,7 +89,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=kremenchug&units=metric&
 	let feelsLike = document.querySelector(".feels-like-value");
 	let clouds = document.querySelector(".clouds");
 	let refreshIcon = document.querySelector(".image");
-	let iconUrl = "http://openweathermap.org/img/w/";
+	let iconUrl = "https://openweathermap.org/img/w/";
 	humidity.textContent=data.main.humidity;
 	pressure.textContent=data.main.pressure;
 	wind.textContent=data.wind.speed;
