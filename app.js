@@ -10,6 +10,7 @@ function weather() {
   let month;
   let week;
   switch (clock.getMonth() + 1) {
+
     case 1:
       month = "Jan";
       break;
@@ -46,8 +47,10 @@ function weather() {
     case 12:
       month = "Dec";
       break;
+      
   }
   switch (clock.getDay()) {
+
     case 0:
       week = "Sun";
       break;
@@ -69,6 +72,7 @@ function weather() {
     case 6:
       week = "Sat";
       break;
+
   }
   let date = document.querySelector(".date");
   let refreshDate = document.querySelector(".refresh-date");
@@ -94,8 +98,8 @@ function weather() {
   )
     .then((response) => response.json())
     .then((data) => {
-      let title = (document.querySelector(".weather__title").textContent =
-        data.name);
+
+      let title = document.querySelector(".weather__title");
       let humidity = document.querySelector(".humidity-value");
       let pressure = document.querySelector(".pressure-value");
       let wind = document.querySelector(".wind-value");
@@ -104,6 +108,7 @@ function weather() {
       let clouds = document.querySelector(".clouds");
       let refreshIcon = document.querySelector(".image");
       let iconUrl = "https://openweathermap.org/img/w/";
+      title.textContent = data.name;
       humidity.textContent = data.main.humidity;
       pressure.textContent = data.main.pressure;
       wind.textContent = data.wind.speed;
@@ -111,6 +116,7 @@ function weather() {
       feelsLike.textContent = Math.round(data.main.feels_like);
       clouds.textContent = data.weather[0].description;
       refreshIcon.setAttribute("src", iconUrl + data.weather[0].icon + ".png");
+
     });
 }
 weather();
@@ -120,7 +126,9 @@ refreshBtn.addEventListener("click", weather);
 fetch("https://api.github.com/users/YujinNoread")
   .then((response) => response.json())
   .then((user) => {
+
     let img = document.querySelector(".user__avatar");
     let avatar = user.avatar_url;
     img.setAttribute("src", avatar);
+
   });
